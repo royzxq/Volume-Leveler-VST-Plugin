@@ -8,22 +8,7 @@
 
 #include "StaticCurve.hpp"
 
-void StaticCurve::setFs(float fs){
-    this -> fs = fs;
-    ts = 1.0 / fs;
-    at = 1 - exp2f(-2.2 * ts/ta * 1000);
-    rt = 1 - exp2f(-2.2 * ts/tr * 1000);
-}
 
-void StaticCurve::setTa(float ta){
-    this -> ta = ta;
-    at = 1 - exp2f(-2.2 * ts/ta * 1000);
-}
-
-void StaticCurve::setTr(float tr){
-    this -> tr = tr;
-    rt = 1 - exp2f(-2.2 * ts/tr * 1000);
-}
 
 void StaticCurve::setSlope(float slope){
     S = slope;
@@ -58,8 +43,8 @@ void StaticCurve::process(float *Peak, float *RMS, float *gain, int blocksize){
             gain[i] = 0 ;
         }
         gain[i] = powf(2.0, gain[i]);
-        t = gain[i] > preGain ? at : rt ;
-        gain[i] = (1-t) * preGain + t * gain[i];
-        preGain = gain[i];
+        t = gain[i] > preVal ? at : rt ;
+        gain[i] = (1-t) * preVal + t * gain[i];
+        preVal = gain[i];
     }
 }

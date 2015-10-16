@@ -18,7 +18,7 @@ void RMS::setTm(float tm){
     tav = 1 - exp2f(-2.2 / fs / (tm/1000));
 }
 
-void RMS::process(float *input, float *output, int blocksize){
+void RMS::process(const float *input, float *output, int blocksize){
     for (int i = 0 ; i < blocksize; i++) {
         output[i] = sqrtf((1-tav) * preRMS * preRMS + tav * input[i] * input[i]);
         preRMS = output[i];

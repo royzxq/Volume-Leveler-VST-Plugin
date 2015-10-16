@@ -158,15 +158,11 @@ void NewProjectAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuff
     // This is the place where you'd normally do the guts of your plugin's
     // audio processing...
     const int numSamples = buffer.getNumSamples();
-    float ** input = buffer.getArrayOfWritePointers();
     for (int channel = 0; channel < getNumInputChannels(); ++channel)
     {
-        float* channelData = input[channel];
-        autoGainControl -> process(channelData, channelData);
+        autoGainControl -> process(buffer.getReadPointer(channel), buffer.getWritePointer(channel));
         // ..do something to the data...
-        input[channel] = channelData;
     }
-    buffer.setDataToReferTo(input, getNumInputChannels(), numSamples);
     
 }
 

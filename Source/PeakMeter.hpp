@@ -12,20 +12,29 @@
 #include <stdio.h>
 #include <math.h>
 
-class PeakMeter {
-private:
+class SmoothingBase {
+protected:
     float ta, tr;
     float fs, ts, at, rt;
-    float prePeak = 1.0;
+    float preVal = 1.0;
+    
 public:
-    PeakMeter(float ta, float tr){
-        this->ta = ta;
-        this->tr = tr;
+    SmoothingBase(float ta, float tr){
+        this -> ta = ta;
+        this -> tr = tr;
     }
     void setFs(float fs);
     void setTa(float ta);
     void setTr(float tr);
-    void process(float * input, float *output, int blocksize);
+};
+
+class PeakMeter: public SmoothingBase {
+
+public:
+    PeakMeter(float ta, float tr):SmoothingBase(ta, tr){
+    }
+    
+    void process(const float * input, float *output, int blocksize);
     
 };
 #endif /* PeakMeter_hpp */

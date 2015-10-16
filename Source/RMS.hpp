@@ -23,6 +23,6 @@ public:
     }
     void setFs(float fs);
     void setTm(float tm);
-    void process(float * input, float * output, int blocksize);
+    void process(const float * input, float * output, int blocksize);
 };
 #endif /* RMS_hpp */

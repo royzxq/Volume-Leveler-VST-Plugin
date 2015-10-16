@@ -40,14 +40,20 @@ void ACG::setParams(float val, int type){
     }
 }
 
-void ACG::process(float *input, float *output){
+void ACG::process(const float *input, float *output){
     peakmeter->process(input, output, blocksize);
     rms -> process(input, RMSBuffer, blocksize);
     staticCurve->process(output, RMSBuffer, output, blocksize);
     for (int i = 0 ; i < blocksize; i++) {
         output[i] = output[i] * input[i];
         if (fabs(output[i]) >= 1.0) {
-            output[i] = 0.9999;
+            if (output[i] > 0) {
+                output[i] = 0.9999;
+            }
+            else{
+                output[i] = -0.9999;
+            }
+            
         }
     }
 }

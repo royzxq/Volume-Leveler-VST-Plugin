@@ -45,6 +45,6 @@ public:
     void init(float fs, int blocksize);
     void setParams(float val, int type);
     
-    void process(float * input, float * output);
+    void process(const float * input, float * output);
 };
 #endif /* AutoGainControl_hpp */

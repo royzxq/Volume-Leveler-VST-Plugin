@@ -226,13 +226,13 @@
  #define JucePlugin_Build_AAX              0
 #endif
 #ifndef  JucePlugin_Name
- #define JucePlugin_Name                   "NewProject"
+ #define JucePlugin_Name                   "VolumeLeveler"
 #endif
 #ifndef  JucePlugin_Desc
- #define JucePlugin_Desc                   "NewProject"
+ #define JucePlugin_Desc                   "Volume Leveler"
 #endif
 #ifndef  JucePlugin_Manufacturer
- #define JucePlugin_Manufacturer           "yourcompany"
+ #define JucePlugin_Manufacturer           "Xinquan "
 #endif
 #ifndef  JucePlugin_ManufacturerWebsite
  #define JucePlugin_ManufacturerWebsite    ""
@@ -301,7 +301,7 @@
  #define JucePlugin_AUManufacturerCode     JucePlugin_ManufacturerCode
 #endif
 #ifndef  JucePlugin_CFBundleIdentifier
- #define JucePlugin_CFBundleIdentifier     com.yourcompany.VolumeLeveler
+ #define JucePlugin_CFBundleIdentifier     com.Xinquan.VolumeLeveler
 #endif
 #ifndef  JucePlugin_RTASCategory
  #define JucePlugin_RTASCategory           ePlugInCategory_None

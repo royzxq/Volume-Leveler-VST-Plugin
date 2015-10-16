@@ -11,20 +11,16 @@
 
 #include <stdio.h>
 #include <math.h>
-
-class StaticCurve{
+#include "PeakMeter.hpp"
+class StaticCurve: public SmoothingBase{
 private:
-    float target, ta, tr;
+    float target;
     float LT, CT, ET, NT, S;
     float diff = 0.06;
-    float fs, ts, at, rt;
-    float preGain = 1, t;
+    float t;
 public:
-    StaticCurve(float target, float slope, float ta, float tr){
+    StaticCurve(float target, float slope, float ta, float tr):SmoothingBase(ta,tr){
         this -> target = target;
-        this -> ta = ta;
-        this -> tr = tr;
-        
         S = slope;
         LT = 2 * target > 0.99 ? 0.99 : 2 * target;
         CT = target + diff/2;
@@ -36,9 +32,6 @@ public:
         NT = log2f(NT);
     }
     
-    void setFs(float fs);
-    void setTa(float ta);
-    void setTr(float tr);
     void setTarget(float target);
     void setSlope(float slope);
     
