@@ -158,7 +158,7 @@ void NewProjectAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuff
 
     // This is the place where you'd normally do the guts of your plugin's
     // audio processing...
-    const int numSamples = buffer.getNumSamples();
+    //const int numSamples = buffer.getNumSamples();
     for (int channel = 0; channel < getNumInputChannels(); ++channel)
     {
         autoGainControl -> process(buffer.getReadPointer(channel), buffer.getWritePointer(channel));
@@ -192,9 +192,6 @@ void NewProjectAudioProcessor::setStateInformation (const void* data, int sizeIn
     // whose contents will have been created by the getStateInformation() call.
 }
 
-void NewProjectAudioProcessor::setParams(float val, PARAMS type){
-    autoGainControl->setParams(val, type);
-}
 //==============================================================================
 // This creates new instances of the plugin..
 AudioProcessor* JUCE_CALLTYPE createPluginFilter()

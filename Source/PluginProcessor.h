@@ -65,7 +65,6 @@ public:
     void getStateInformation (MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
     
-    void setParams(float val, PARAMS type);
 private:
     //==============================================================================
     ACG * autoGainControl;

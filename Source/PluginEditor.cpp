@@ -19,7 +19,7 @@ NewProjectAudioProcessorEditor::NewProjectAudioProcessorEditor (NewProjectAudioP
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
     setSize (400, 300);
-    pluginGUI = new PluginGUI(this);
+    pluginGUI = new PluginGUI();
     addAndMakeVisible(pluginGUI);
 }
 
