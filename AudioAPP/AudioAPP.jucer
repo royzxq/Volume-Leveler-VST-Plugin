@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="lC59a8" name="AudioAPP" projectType="guiapp" version="1.0.0"
+              bundleIdentifier="com.yourcompany.AudioAPP" includeBinaryInAppConfig="1"
+              jucerVersion="3.2.0">
+  <MAINGROUP id="nC1QEv" name="AudioAPP">
+    <GROUP id="{D6D92F5F-E3F0-FA9D-D53A-D974D73599DA}" name="Source">
+      <FILE id="gGRclE" name="AutoGainControl.cpp" compile="1" resource="0"
+            file="../Source/AutoGainControl.cpp"/>
+      <FILE id="S7d8cp" name="AutoGainControl.hpp" compile="0" resource="0"
+            file="../Source/AutoGainControl.hpp"/>
+      <FILE id="z3F7ii" name="PeakMeter.cpp" compile="1" resource="0" file="../Source/PeakMeter.cpp"/>
+      <FILE id="rfoW8b" name="PeakMeter.hpp" compile="0" resource="0" file="../Source/PeakMeter.hpp"/>
+      <FILE id="Kw9EYa" name="RMS.cpp" compile="1" resource="0" file="../Source/RMS.cpp"/>
+      <FILE id="ct312G" name="RMS.hpp" compile="0" resource="0" file="../Source/RMS.hpp"/>
+      <FILE id="JtjBQD" name="StaticCurve.cpp" compile="1" resource="0" file="../Source/StaticCurve.cpp"/>
+      <FILE id="pQ07Ki" name="StaticCurve.hpp" compile="0" resource="0" file="../Source/StaticCurve.hpp"/>
+      <FILE id="PKz7Fe" name="GUI.cpp" compile="1" resource="0" file="Source/GUI.cpp"/>
+      <FILE id="M1Smqv" name="GUI.h" compile="0" resource="0" file="Source/GUI.h"/>
+      <FILE id="dVbqgH" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+      <FILE id="tUcG0o" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="1" optimisation="1" targetName="AudioAPP"/>
+        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="0" optimisation="3" targetName="AudioAPP"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../NewJuce/JUCE-master/modules"/>
+        <MODULEPATH id="juce_events" path="../../NewJuce/JUCE-master/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../NewJuce/JUCE-master/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../NewJuce/JUCE-master/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../NewJuce/JUCE-master/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../NewJuce/JUCE-master/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../NewJuce/JUCE-master/modules"/>
+        <MODULEPATH id="juce_video" path="../../NewJuce/JUCE-master/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../NewJuce/JUCE-master/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../NewJuce/JUCE-master/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../NewJuce/JUCE-master/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../NewJuce/JUCE-master/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../NewJuce/JUCE-master/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../NewJuce/JUCE-master/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_video" showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+  <JUCEOPTIONS/>
+</JUCERPROJECT>

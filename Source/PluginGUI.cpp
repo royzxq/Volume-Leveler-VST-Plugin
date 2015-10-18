@@ -27,18 +27,17 @@
 //[/MiscUserDefs]
 
 //==============================================================================
-PluginGUI::PluginGUI (AudioProcessorEditor * p)
+PluginGUI::PluginGUI ()
 {
     //[Constructor_pre] You can add your own custom stuff here..
     //[/Constructor_pre]
-    editor = p;
-    
+
     addAndMakeVisible (TargetSlider = new Slider ("TargetSlider"));
     TargetSlider->setRange (0, 1, 0);
     TargetSlider->setSliderStyle (Slider::LinearHorizontal);
     TargetSlider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
     TargetSlider->addListener (this);
-    TargetSlider->setValue(0.5);
+
     addAndMakeVisible (Target = new Label ("Target",
                                            TRANS("Target Value")));
     Target->setFont (Font (15.00f, Font::plain));
@@ -52,7 +51,6 @@ PluginGUI::PluginGUI (AudioProcessorEditor * p)
     SlopeSlider2->setSliderStyle (Slider::LinearHorizontal);
     SlopeSlider2->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
     SlopeSlider2->addListener (this);
-    SlopeSlider2->setValue(1.0);
 
     addAndMakeVisible (DynamicSlope = new Label ("DynamicSlope",
                                                  TRANS("Dynamic Slope")));
@@ -67,8 +65,7 @@ PluginGUI::PluginGUI (AudioProcessorEditor * p)
     AttackSlider->setSliderStyle (Slider::LinearHorizontal);
     AttackSlider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
     AttackSlider->addListener (this);
-    AttackSlider->setValue(2);
-    
+
     addAndMakeVisible (AttackTime = new Label ("AttackTime",
                                                TRANS("Attack Time (ms)")));
     AttackTime->setFont (Font (15.00f, Font::plain));
@@ -82,8 +79,7 @@ PluginGUI::PluginGUI (AudioProcessorEditor * p)
     ReleaseSlider->setSliderStyle (Slider::LinearHorizontal);
     ReleaseSlider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
     ReleaseSlider->addListener (this);
-    ReleaseSlider->setValue(800.0);
-    
+
     addAndMakeVisible (ReleaseTime = new Label ("ReleaseTime",
                                                 TRANS("Release Time (ms)")));
     ReleaseTime->setFont (Font (15.00f, Font::plain));
@@ -160,25 +156,21 @@ void PluginGUI::sliderValueChanged (Slider* sliderThatWasMoved)
     {
         //[UserSliderCode_TargetSlider] -- add your slider handling code here..
         //[/UserSliderCode_TargetSlider]
-        editor->processor.setParameter(2, sliderThatWasMoved->getValue());
     }
     else if (sliderThatWasMoved == SlopeSlider2)
     {
         //[UserSliderCode_SlopeSlider2] -- add your slider handling code here..
         //[/UserSliderCode_SlopeSlider2]
-        editor->processor.setParameter(3, sliderThatWasMoved->getValue());
     }
     else if (sliderThatWasMoved == AttackSlider)
     {
         //[UserSliderCode_AttackSlider] -- add your slider handling code here..
         //[/UserSliderCode_AttackSlider]
-        editor->processor.setParameter(0, sliderThatWasMoved->getValue());
     }
     else if (sliderThatWasMoved == ReleaseSlider)
     {
         //[UserSliderCode_ReleaseSlider] -- add your slider handling code here..
         //[/UserSliderCode_ReleaseSlider]
-        editor->processor.setParameter(1, sliderThatWasMoved->getValue());
     }
 
     //[UsersliderValueChanged_Post]
